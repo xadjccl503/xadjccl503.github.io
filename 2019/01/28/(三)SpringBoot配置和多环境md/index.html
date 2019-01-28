@@ -30,7 +30,7 @@
 <meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-28T08:22:51.849Z">
+<meta property="og:updated_time" content="2019-01-28T08:37:04.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(三)SpringBoot配置和多环境">
 <meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
@@ -225,28 +225,30 @@ public class HelloSpringBootController {
 
 </code></pre><p> 接着启动项目可以看见：<br><img src="../../../../resource/image/springboot/3/1.png" alt=""> </p>
 <p>启动了8083 端口</p>
-<p>我们访问一下<a href="http://127.0.0.1:8083/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8083/sayHello，效果如下：</a></p>
+<p>我们访问一下<a href="http://127.0.0.1:8083/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8083/sayHello，效果如下：</a><br><img src="../../../../resource/image/springboot/3/2.png" alt=""> </p>
 <p>访问 成功，配置项正确获取了。</p>
 <p>但是在我们正常的开发中会有多个环境，测试环境，开发环境，生产环境，联调环境等等，每个环境下的配置不尽相同，那就需要我们配置多环境的配置文件：</p>
-<p>首先在main/resources下 创建以下几个环境配置文件</p>
-<p>修改各个配置文件的端口和name值</p>
+<p>首先在main/resources下 创建以下几个环境配置文件<br><img src="../../../../resource/image/springboot/3/4.png" alt=""> </p>
+<p>修改各个配置文件的端口和name值<br><img src="../../../../resource/image/springboot/3/5.png" alt=""> </p>
 <p>在application.properties下设置：</p>
-<p>spring.profiles.active=prod<br> 确定当前使用的是哪个环境，这边环境的值与application-prod.properties中-后面的值对应，这是SpringBoot约定好的，</p>
-<p>启动项目：</p>
-<p>   会发现启动了application-prod,properties配置下的8082端口，因为我们设置了当前的环境是prod，所以application-prod,properties生效了。</p>
-<p>在浏览器中输入<a href="http://127.0.0.1:8082/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8082/sayHello，效果如下：</a></p>
+<p><code>spring.profiles.active=prod</code><br> 确定当前使用的是哪个环境，这边环境的值与application-prod.properties中-后面的值对应，这是SpringBoot约定好的，</p>
+<p>启动项目：<br><img src="../../../../resource/image/springboot/3/6.png" alt=""> </p>
+<p>会发现启动了application-prod,properties配置下的8082端口，因为我们设置了当前的环境是prod，所以application-prod,properties生效了。</p>
+<p>在浏览器中输入<a href="http://127.0.0.1:8082/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8082/sayHello，效果如下：</a><br><img src="../../../../resource/image/springboot/3/7.png" alt=""> </p>
 <p>获取到 了正确的端口和值，可以依次测试各个环境。</p>
 <p>基本的多环境配置如上述。</p>
 <p>但是在工作项目中我们将一个项目打包之后发布，springboot 项目使用java -jar xxx.jar 来启动项目。那么我们现在打包之后部署在开发环境中，配置文件中应该这样配置</p>
-<p>spring.profiles.active=dev<br>那么如果我们要将项目部署到测试环境中，是不是需要修改一下配置文件，然后重新打包部署呢？显然不是的，当然有更好的办法来解决。</p>
+<p><code>spring.profiles.active=dev</code><br>那么如果我们要将项目部署到测试环境中，是不是需要修改一下配置文件，然后重新打包部署呢？显然不是的，当然有更好的办法来解决。</p>
 <p>首先我们将 项目打包，当然我们一般会有一些自动打包的脚本，但是这边我就 直接使用cmd打包</p>
-<p>打开cmd进入当前项目的目录 </p>
+<p>打开cmd进入当前项目的目录<br><img src="../../../../resource/image/springboot/3/8.png" alt=""> </p>
 <p>运行mvn install （首先确认你已经安装了maven并且配置好环境变量，mvn是可以运行的）</p>
+<p> <img src="../../../../resource/image/springboot/3/9.png" alt=""> </p>
 <p>运行成功之后进入target目录会看见，项目已经打包成jar了</p>
+<p><img src="../../../../resource/image/springboot/3/10.png" alt=""> </p>
 <p>cmd 继续进入target目录 （jar所在的目录）</p>
 <p>运行：</p>
-<p>java -jar PropertiesSpringBoot-0.0.1-SNAPSHOT.jar –spring.profiles.active=test<br>运行jar包，并使用–配置项=值，来设置配置项</p>
-<p>可以看见启动了测试环境8083 </p>
+<p><code>java -jar PropertiesSpringBoot-0.0.1-SNAPSHOT.jar --spring.profiles.active=test</code><br>运行jar包，并使用–配置项=值，来设置配置项</p>
+<p>可以看见启动了测试环境8083<br><img src="../../../../resource/image/springboot/3/11.png" alt=""> </p>
 <p>访问正确！ </p>
 
       
