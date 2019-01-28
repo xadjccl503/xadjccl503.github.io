@@ -13,7 +13,7 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>(二)创建一个简单的springboot应用 | xadjccl</title>
+  <title>(三)springboot配置和多环境 | xadjccl</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="keywords" content="SpringBoot">
@@ -21,19 +21,19 @@
   
   
   
-  <meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;接下来，我们就 一起来创建第一个SpringBoot 应用。创建SpringBoot项目过程中就会发现为什么SpringBoot会这么受欢迎了。关于IDE,写文章的时候使用的是Spring Tool Suite（STS），现在已经转为Idea，看个人喜好吧，自己怎么舒服怎么来，在工作中也没有强制一定要使用什么IDE。">
+  <meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="(二)创建一个简单的SpringBoot应用">
-<meta property="og:url" content="http://yoursite.com/2019/01/28/(二)创建一个简单的SpringBoot应用/index.html">
+<meta property="og:title" content="(三)SpringBoot配置和多环境">
+<meta property="og:url" content="http://yoursite.com/2019/01/28/(三)SpringBoot配置和多环境md/index.html">
 <meta property="og:site_name" content="xadjccl">
-<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;接下来，我们就 一起来创建第一个SpringBoot 应用。创建SpringBoot项目过程中就会发现为什么SpringBoot会这么受欢迎了。关于IDE,写文章的时候使用的是Spring Tool Suite（STS），现在已经转为Idea，看个人喜好吧，自己怎么舒服怎么来，在工作中也没有强制一定要使用什么IDE。">
+<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-28T06:38:01.381Z">
+<meta property="og:updated_time" content="2019-01-28T06:50:07.190Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="(二)创建一个简单的SpringBoot应用">
-<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;接下来，我们就 一起来创建第一个SpringBoot 应用。创建SpringBoot项目过程中就会发现为什么SpringBoot会这么受欢迎了。关于IDE,写文章的时候使用的是Spring Tool Suite（STS），现在已经转为Idea，看个人喜好吧，自己怎么舒服怎么来，在工作中也没有强制一定要使用什么IDE。">
+<meta name="twitter:title" content="(三)SpringBoot配置和多环境">
+<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta name="twitter:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
   
     <link rel="alternate" href="/atom.xml" title="xadjccl" type="application/atom+xml">
@@ -168,13 +168,13 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-(二)创建一个简单的SpringBoot应用" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
+          <section id="main" style="float:none;"><article id="post-(三)SpringBoot配置和多环境md" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img fancybox" href="/../../../../resource/image/SpringBootLogo.jpg" rel="gallery_cjrfyah0r0000io9lfwal6a0y">
+      <a class="article-gallery-img fancybox" href="/../../../../resource/image/SpringBootLogo.jpg" rel="gallery_cjrfz467l0000cc9lqwc23tja">
         <img src="/../../../../resource/image/SpringBootLogo.jpg" itemprop="image">
       </a>
     
@@ -186,7 +186,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" itemprop="name">
-      (二)创建一个简单的SpringBoot应用
+      (三)SpringBoot配置和多环境
     </h1>
   
 
@@ -194,8 +194,8 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2019/01/28/(二)创建一个简单的SpringBoot应用/" class="article-date">
-	  <time datetime="2019-01-28T06:16:10.974Z" itemprop="datePublished">一月 28, 2019</time>
+	Posted on <a href="/2019/01/28/(三)SpringBoot配置和多环境md/" class="article-date">
+	  <time datetime="2019-01-28T06:46:59.842Z" itemprop="datePublished">一月 28, 2019</time>
 	</a>
 
       
@@ -206,27 +206,41 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&#160; &#160; &#160; &#160;接下来，我们就 一起来创建第一个SpringBoot 应用。创建SpringBoot项目过程中就会发现为什么SpringBoot会这么受欢迎了。关于IDE,写文章的时候使用的是Spring Tool Suite（STS），现在已经转为Idea，看个人喜好吧，自己怎么舒服怎么来，在工作中也没有强制一定要使用什么IDE。<a id="more"></a> </p>
-<p>言归正传， 下面的教程都是使用STS。</p>
-<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><h3 id="创建一个Spring-Starter-project"><a href="#创建一个Spring-Starter-project" class="headerlink" title="创建一个Spring Starter project"></a>创建一个Spring Starter project</h3><p><img src="../../../../resource/image/springboot/2/1.png" alt=""> </p>
-<h3 id="点击NEXT-选择对用的版本和WEB项目"><a href="#点击NEXT-选择对用的版本和WEB项目" class="headerlink" title="点击NEXT 选择对用的版本和WEB项目"></a>点击NEXT 选择对用的版本和WEB项目</h3><p><img src="../../../../resource/image/springboot/2/2.png" alt=""><br>然后选择finish首先创建一个项目 </p>
-<h3 id="POM-XML"><a href="#POM-XML" class="headerlink" title="POM.XML"></a>POM.XML</h3><p>打开项目的POM.XML 你会发现自动给你导入了一些依赖<br><img src="../../../../resource/image/springboot/2/3.png" alt=""><br>&#160; &#160; &#160; &#160;首先导入SpringBoot的依赖，因为我们刚才创建项目的时候选择了web， 所以还 自动导入了spring-boot-starter-web依赖。你也可以创建一个普通的 Maven然后将这些依赖导入一下是一个意思。</p>
-<h2 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h2><ul>
-<li>项目入口类：类上使用@SpringBootApplication 标识 该类为项目的入口类<br><img src="../../../../resource/image/springboot/2/4.png" alt=""> </li>
-<li>然后我们创建一个包 编写Controller<br><img src="../../../../resource/image/springboot/2/5.png" alt=""> </li>
-</ul>
-<p>&#160; &#160; &#160; &#160;注意我们创建的包必须是在程序入口类 所在包的子包，这样写的@RestController才会被扫描到</p>
-<p>&#160; &#160; &#160; &#160;接着我们启动项目，在入口类上 右键==》Run as ==》 Spring Boot App<br><img src="../../../../resource/image/springboot/2/6.png" alt=""> </p>
-<p>程序成功启动，默认端口为 8080</p>
-<p>浏览器上输入：<a href="http://localhost:8080/sayHello" target="_blank" rel="noopener">http://localhost:8080/sayHello</a><br><img src="../../../../resource/image/springboot/2/7.png" alt=""> </p>
-<p>输出。完毕</p>
-<p>一个简单的SpringBoot的项目就搭建成功了，非常方便，少去了spring spring mvc的配置，就可以快速的创建一个web项目。</p>
-<p>一般来说使用SpringBoot的其他功能的步骤：</p>
-<p>1.添加依赖</p>
-<p>2..使用注解编写一些配置或代码</p>
-<p>就可以了 。</p>
-<p>题外话：<br><img src="../../../../resource/image/springboot/2/8.png" alt=""><br>&#160; &#160; &#160; &#160;启动的时候这块  标志是可以修改的，在java/main/resource 下创建一个banner.txt 文件，里面写入你要的内容，启动就可以看见这块标识已经 被修改了。</p>
-<p>要生成类似的字体可以访问<a href="http://patorjk.com/software/taag" target="_blank" rel="noopener">http://patorjk.com/software/taag</a>去生成.<br><img src="../../../../resource/image/springboot/2/9.png" alt=""><br>其实没啥用。。。 </p>
+        <p>&#160; &#160; &#160; &#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。<a id="more"></a><br>&#160; &#160; &#160; &#160;application.properties配置文件中 配置整个springboot所需的配置，例如端口，项目名称，redis信息，到后续开发springcloud时的注册中心等等的配置信息，当然也可以自己自定义的配置项。</p>
+<p>&#160; &#160; &#160; &#160;我们打开application.properties，添加配置项：<br>···<br>server.port=8083<br>name=this is default<br>···<br>&#160; &#160; &#160; &#160;然后改写之前的HelloSpringBootController类：<br>··· </p>
+<p>@RestController<br>public class HelloSpringBootController {</p>
+<pre><code>@Value(&quot;${name}&quot;)
+private String name;
+@RequestMapping(&quot;/sayHello&quot;)
+public String sayHello() {
+    return &quot;Hello ,&quot;+this.name;
+}
+</code></pre><p>}</p>
+<p>···<br> 接着启动项目可以看见：<br><img src="../../../../resource/image/springboot/3/1.png" alt=""> </p>
+<p>启动了8083 端口</p>
+<p>我们访问一下<a href="http://127.0.0.1:8083/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8083/sayHello，效果如下：</a></p>
+<p>访问 成功，配置项正确获取了。</p>
+<p>但是在我们正常的开发中会有多个环境，测试环境，开发环境，生产环境，联调环境等等，每个环境下的配置不尽相同，那就需要我们配置多环境的配置文件：</p>
+<p>首先在main/resources下 创建以下几个环境配置文件</p>
+<p>修改各个配置文件的端口和name值</p>
+<p>在application.properties下设置：</p>
+<p>spring.profiles.active=prod<br> 确定当前使用的是哪个环境，这边环境的值与application-prod.properties中-后面的值对应，这是SpringBoot约定好的，</p>
+<p>启动项目：</p>
+<p>   会发现启动了application-prod,properties配置下的8082端口，因为我们设置了当前的环境是prod，所以application-prod,properties生效了。</p>
+<p>在浏览器中输入<a href="http://127.0.0.1:8082/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8082/sayHello，效果如下：</a></p>
+<p>获取到 了正确的端口和值，可以依次测试各个环境。</p>
+<p>基本的多环境配置如上述。</p>
+<p>但是在工作项目中我们将一个项目打包之后发布，springboot 项目使用java -jar xxx.jar 来启动项目。那么我们现在打包之后部署在开发环境中，配置文件中应该这样配置</p>
+<p>spring.profiles.active=dev<br>那么如果我们要将项目部署到测试环境中，是不是需要修改一下配置文件，然后重新打包部署呢？显然不是的，当然有更好的办法来解决。</p>
+<p>首先我们将 项目打包，当然我们一般会有一些自动打包的脚本，但是这边我就 直接使用cmd打包</p>
+<p>打开cmd进入当前项目的目录 </p>
+<p>运行mvn install （首先确认你已经安装了maven并且配置好环境变量，mvn是可以运行的）</p>
+<p>运行成功之后进入target目录会看见，项目已经打包成jar了</p>
+<p>cmd 继续进入target目录 （jar所在的目录）</p>
+<p>运行：</p>
+<p>java -jar PropertiesSpringBoot-0.0.1-SNAPSHOT.jar –spring.profiles.active=test<br>运行jar包，并使用–配置项=值，来设置配置项</p>
+<p>可以看见启动了测试环境8083 </p>
+<h2 id="访问正确！"><a href="#访问正确！" class="headerlink" title="访问正确！ "></a>访问正确！ </h2><p>作者：xadjccl<br>来源：CSDN<br>原文：<a href="https://blog.csdn.net/xadjccl/article/details/81983768" target="_blank" rel="noopener">https://blog.csdn.net/xadjccl/article/details/81983768</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
 
       
     </div>
@@ -248,19 +262,10 @@ var themeMenus = {};
     
 <nav id="article-nav">
   
-    <a href="/2019/01/28/(三)SpringBoot配置和多环境md/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          (三)SpringBoot配置和多环境
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/28/(一)SpringBoot概述/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/01/28/(二)创建一个简单的SpringBoot应用/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">(一)SpringBoot概述</div>
+      <div class="article-nav-title">(二)创建一个简单的SpringBoot应用</div>
     </a>
   
 </nav>
@@ -274,7 +279,7 @@ var themeMenus = {};
     <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建项目"><span class="nav-number">1.</span> <span class="nav-text">创建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个Spring-Starter-project"><span class="nav-number">1.1.</span> <span class="nav-text">创建一个Spring Starter project</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点击NEXT-选择对用的版本和WEB项目"><span class="nav-number">1.2.</span> <span class="nav-text">点击NEXT 选择对用的版本和WEB项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POM-XML"><span class="nav-number">1.3.</span> <span class="nav-text">POM.XML</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目目录"><span class="nav-number">2.</span> <span class="nav-text">项目目录</span></a></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#访问正确！"><span class="nav-number">1.</span> <span class="nav-text">访问正确！ </span></a></li></ol>
     
     </div>
   </aside>
