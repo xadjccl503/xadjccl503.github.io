@@ -30,7 +30,7 @@
 <meta property="og:description" content="走进SpringBoot之第一个SpringBoot应用&amp;#160; &amp;#160; &amp;#160; &amp;#160;接下来，我们就 一起来创建第一个SpringBoot 应用。创建SpringBoot项目过程中就会发现为什么SpringBoot会这么受欢迎了。关于IDE,写文章的时候使用的是Spring Tool Suite（STS），现在已经转为Idea，看个人喜好吧，自己怎么舒服怎么来，在工作中也没">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-28T06:30:49.800Z">
+<meta property="og:updated_time" content="2019-01-28T06:34:00.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(二)创建一个简单的SpringBoot应用">
 <meta name="twitter:description" content="走进SpringBoot之第一个SpringBoot应用&amp;#160; &amp;#160; &amp;#160; &amp;#160;接下来，我们就 一起来创建第一个SpringBoot 应用。创建SpringBoot项目过程中就会发现为什么SpringBoot会这么受欢迎了。关于IDE,写文章的时候使用的是Spring Tool Suite（STS），现在已经转为Idea，看个人喜好吧，自己怎么舒服怎么来，在工作中也没">
@@ -208,25 +208,25 @@ var themeMenus = {};
       
         <h1 id="走进SpringBoot之第一个SpringBoot应用"><a href="#走进SpringBoot之第一个SpringBoot应用" class="headerlink" title="走进SpringBoot之第一个SpringBoot应用"></a>走进SpringBoot之第一个SpringBoot应用</h1><p>&#160; &#160; &#160; &#160;接下来，我们就 一起来创建第一个SpringBoot 应用。创建SpringBoot项目过程中就会发现为什么SpringBoot会这么受欢迎了。关于IDE,写文章的时候使用的是Spring Tool Suite（STS），现在已经转为Idea，看个人喜好吧，自己怎么舒服怎么来，在工作中也没有强制一定要使用什么IDE。<a id="more"></a> </p>
 <p>言归正传， 下面的教程都是使用STS。</p>
-<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><h3 id="创建一个Spring-Starter-project"><a href="#创建一个Spring-Starter-project" class="headerlink" title="创建一个Spring Starter project"></a>创建一个Spring Starter project</h3><p><img src="../../../../resource/image/springboot/SpringBoot/2/1.png" alt=""> </p>
-<h3 id="点击NEXT-选择对用的版本和WEB项目"><a href="#点击NEXT-选择对用的版本和WEB项目" class="headerlink" title="点击NEXT 选择对用的版本和WEB项目"></a>点击NEXT 选择对用的版本和WEB项目</h3><p><img src="../../../../resource/image/springboot/SpringBoot/2/2.png" alt=""><br>然后选择finish首先创建一个项目 </p>
-<h3 id="POM-XML"><a href="#POM-XML" class="headerlink" title="POM.XML"></a>POM.XML</h3><p>打开项目的POM.XML 你会发现自动给你导入了一些依赖<br><img src="../../../../resource/image/springboot/SpringBoot/2/3.png" alt=""><br>&#160; &#160; &#160; &#160;首先导入SpringBoot的依赖，因为我们刚才创建项目的时候选择了web， 所以还 自动导入了spring-boot-starter-web依赖。你也可以创建一个普通的 Maven然后将这些依赖导入一下是一个意思。</p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><h3 id="创建一个Spring-Starter-project"><a href="#创建一个Spring-Starter-project" class="headerlink" title="创建一个Spring Starter project"></a>创建一个Spring Starter project</h3><p><img src="../../../../resource/image/springboot/2/1.png" alt=""> </p>
+<h3 id="点击NEXT-选择对用的版本和WEB项目"><a href="#点击NEXT-选择对用的版本和WEB项目" class="headerlink" title="点击NEXT 选择对用的版本和WEB项目"></a>点击NEXT 选择对用的版本和WEB项目</h3><p><img src="../../../../resource/image/springboot/2/2.png" alt=""><br>然后选择finish首先创建一个项目 </p>
+<h3 id="POM-XML"><a href="#POM-XML" class="headerlink" title="POM.XML"></a>POM.XML</h3><p>打开项目的POM.XML 你会发现自动给你导入了一些依赖<br><img src="../../../../resource/image/springboot/2/3.png" alt=""><br>&#160; &#160; &#160; &#160;首先导入SpringBoot的依赖，因为我们刚才创建项目的时候选择了web， 所以还 自动导入了spring-boot-starter-web依赖。你也可以创建一个普通的 Maven然后将这些依赖导入一下是一个意思。</p>
 <h2 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h2><ul>
-<li>项目入口类：类上使用@SpringBootApplication 标识 该类为项目的入口类<br><img src="../../../../resource/image/springboot/SpringBoot/2/4.png" alt=""> </li>
-<li>然后我们创建一个包 编写Controller<br><img src="../../../../resource/image/springboot/SpringBoot/2/5.png" alt=""> </li>
+<li>项目入口类：类上使用@SpringBootApplication 标识 该类为项目的入口类<br><img src="../../../../resource/image/springboot/2/4.png" alt=""> </li>
+<li>然后我们创建一个包 编写Controller<br><img src="../../../../resource/image/springboot/2/5.png" alt=""> </li>
 </ul>
 <p>&#160; &#160; &#160; &#160;注意我们创建的包必须是在程序入口类 所在包的子包，这样写的@RestController才会被扫描到</p>
-<p>&#160; &#160; &#160; &#160;接着我们启动项目，在入口类上 右键==》Run as ==》 Spring Boot App<br><img src="../../../../resource/image/springboot/SpringBoot/2/6.png" alt=""> </p>
+<p>&#160; &#160; &#160; &#160;接着我们启动项目，在入口类上 右键==》Run as ==》 Spring Boot App<br><img src="../../../../resource/image/springboot/2/6.png" alt=""> </p>
 <p>程序成功启动，默认端口为 8080</p>
-<p>浏览器上输入：<a href="http://localhost:8080/sayHello" target="_blank" rel="noopener">http://localhost:8080/sayHello</a><br><img src="../../../../resource/image/springboot/SpringBoot/2/7.png" alt=""> </p>
+<p>浏览器上输入：<a href="http://localhost:8080/sayHello" target="_blank" rel="noopener">http://localhost:8080/sayHello</a><br><img src="../../../../resource/image/springboot/2/7.png" alt=""> </p>
 <p>输出。完毕</p>
 <p>一个简单的SpringBoot的项目就搭建成功了，非常方便，少去了spring spring mvc的配置，就可以快速的创建一个web项目。</p>
 <p>一般来说使用SpringBoot的其他功能的步骤：</p>
 <p>1.添加依赖</p>
 <p>2..使用注解编写一些配置或代码</p>
 <p>就可以了 。</p>
-<p>题外话：<br><img src="../../../../resource/image/springboot/SpringBoot/2/8.png" alt=""><br>&#160; &#160; &#160; &#160;启动的时候这块  标志是可以修改的，在java/main/resource 下创建一个banner.txt 文件，里面写入你要的内容，启动就可以看见这块标识已经 被修改了。</p>
-<p>要生成类似的字体可以访问<a href="http://patorjk.com/software/taag&quot;" target="_blank" rel="noopener">http://patorjk.com/software/taag</a>去生成.<br><img src="../../../../resource/image/springboot/SpringBoot/2/9.png" alt=""><br>其实没啥用。。。 </p>
+<p>题外话：<br><img src="../../../../resource/image/springboot/2/8.png" alt=""><br>&#160; &#160; &#160; &#160;启动的时候这块  标志是可以修改的，在java/main/resource 下创建一个banner.txt 文件，里面写入你要的内容，启动就可以看见这块标识已经 被修改了。</p>
+<p>要生成类似的字体可以访问<a href="http://patorjk.com/software/taag" target="_blank" rel="noopener">http://patorjk.com/software/taag</a>去生成.<br><img src="../../../../resource/image/springboot/2/9.png" alt=""><br>其实没啥用。。。 </p>
 
       
     </div>
