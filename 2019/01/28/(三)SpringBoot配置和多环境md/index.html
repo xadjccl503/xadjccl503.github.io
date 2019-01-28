@@ -30,7 +30,7 @@
 <meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-28T08:03:46.010Z">
+<meta property="og:updated_time" content="2019-01-28T08:10:08.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(三)SpringBoot配置和多环境">
 <meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
@@ -207,8 +207,21 @@ var themeMenus = {};
     <div class="article-entry" itemprop="articleBody">
       
         <p>&#160; &#160; &#160; &#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。<a id="more"></a><br>&#160; &#160; &#160; &#160;application.properties配置文件中 配置整个springboot所需的配置，例如端口，项目名称，redis信息，到后续开发springcloud时的注册中心等等的配置信息，当然也可以自己自定义的配置项。</p>
-<p>&#160; &#160; &#160; &#160;我们打开application.properties，添加配置项：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">	server.port=8083  </span><br><span class="line">	name=this is default  </span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&amp;#160; &amp;#160; &amp;#160; &amp;#160;然后改写之前的HelloSpringBootController类：  </span><br><span class="line">```  </span><br><span class="line">	@RestController  </span><br><span class="line">	public class HelloSpringBootController &#123;</span><br><span class="line"> </span><br><span class="line">		@Value(&quot;$&#123;name&#125;&quot;)</span><br><span class="line">		private String name;</span><br><span class="line">		@RequestMapping(&quot;/sayHello&quot;)</span><br><span class="line">		public String sayHello() &#123;</span><br><span class="line">			return &quot;Hello ,&quot;+this.name;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
-<p> 接着启动项目可以看见：<br><img src="../../../../resource/image/springboot/3/1.png" alt=""> </p>
+<p>&#160; &#160; &#160; &#160;我们打开application.properties，添加配置项：  </p>
+<pre><code>server.port=8083  
+name=this is default  
+</code></pre><p>&#160; &#160; &#160; &#160;然后改写之前的HelloSpringBootController类：  </p>
+<pre><code>@RestController  
+public class HelloSpringBootController {
+
+    @Value(&quot;${name}&quot;)
+    private String name;
+    @RequestMapping(&quot;/sayHello&quot;)
+    public String sayHello() {
+        return &quot;Hello ,&quot;+this.name;
+    }
+}
+</code></pre><p> 接着启动项目可以看见：<br><img src="../../../../resource/image/springboot/3/1.png" alt=""> </p>
 <p>启动了8083 端口</p>
 <p>我们访问一下<a href="http://127.0.0.1:8083/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8083/sayHello，效果如下：</a></p>
 <p>访问 成功，配置项正确获取了。</p>
