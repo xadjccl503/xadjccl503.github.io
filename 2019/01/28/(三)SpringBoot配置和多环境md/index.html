@@ -30,7 +30,7 @@
 <meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-28T06:56:08.218Z">
+<meta property="og:updated_time" content="2019-01-28T07:13:55.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(三)SpringBoot配置和多环境">
 <meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
@@ -207,7 +207,10 @@ var themeMenus = {};
     <div class="article-entry" itemprop="articleBody">
       
         <p>&#160; &#160; &#160; &#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。<a id="more"></a><br>&#160; &#160; &#160; &#160;application.properties配置文件中 配置整个springboot所需的配置，例如端口，项目名称，redis信息，到后续开发springcloud时的注册中心等等的配置信息，当然也可以自己自定义的配置项。</p>
-<p>&#160; &#160; &#160; &#160;我们打开application.properties，添加配置项：<br>···<br>    server.port=8083<br>    name=this is default<br>···<br>&#160; &#160; &#160; &#160;然后改写之前的HelloSpringBootController类：  </p>
+<p>&#160; &#160; &#160; &#160;我们打开application.properties，添加配置项：  </p>
+<pre><code>server.port=8083  
+name=this is default  
+</code></pre><p>&#160; &#160; &#160; &#160;然后改写之前的HelloSpringBootController类：  </p>
 <pre><code>@RestController  
 public class HelloSpringBootController {
 
@@ -218,7 +221,7 @@ public class HelloSpringBootController {
         return &quot;Hello ,&quot;+this.name;
     }
 }
-</code></pre><p>···<br> 接着启动项目可以看见：<br><img src="../../../../resource/image/springboot/3/1.png" alt=""> </p>
+</code></pre><p> 接着启动项目可以看见：<br><img src="../../../../resource/image/springboot/3/1.png" alt=""> </p>
 <p>启动了8083 端口</p>
 <p>我们访问一下<a href="http://127.0.0.1:8083/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8083/sayHello，效果如下：</a></p>
 <p>访问 成功，配置项正确获取了。</p>
