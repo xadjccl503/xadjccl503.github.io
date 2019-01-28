@@ -30,7 +30,7 @@
 <meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-28T08:10:08.828Z">
+<meta property="og:updated_time" content="2019-01-28T08:22:51.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(三)SpringBoot配置和多环境">
 <meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
@@ -210,8 +210,9 @@ var themeMenus = {};
 <p>&#160; &#160; &#160; &#160;我们打开application.properties，添加配置项：  </p>
 <pre><code>server.port=8083  
 name=this is default  
-</code></pre><p>&#160; &#160; &#160; &#160;然后改写之前的HelloSpringBootController类：  </p>
-<pre><code>@RestController  
+</code></pre><p>&#160; &#160; &#160; &#160;然后改写之前的HelloSpringBootController类  </p>
+<pre><code>
+@RestController  
 public class HelloSpringBootController {
 
     @Value(&quot;${name}&quot;)
@@ -220,7 +221,8 @@ public class HelloSpringBootController {
     public String sayHello() {
         return &quot;Hello ,&quot;+this.name;
     }
-}
+}  
+
 </code></pre><p> 接着启动项目可以看见：<br><img src="../../../../resource/image/springboot/3/1.png" alt=""> </p>
 <p>启动了8083 端口</p>
 <p>我们访问一下<a href="http://127.0.0.1:8083/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8083/sayHello，效果如下：</a></p>
