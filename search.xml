@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[SpringBoot概述]]></title>
+    <title></title>
     <url>%2F2019%2F01%2F28%2FSpringBoot%E6%A6%82%E8%BF%B0%2F</url>
-    <content type="text"><![CDATA[SpringBoot概述什么是SpringBoot&#160; &#160; &#160; &#160;我们知道Spring使用一个轻量级的企业开发一站式解决方案，提供了最主要的IOC、AOP等相关支持，但是在开发过程中会发现，项目中多而繁杂的配置文件总是让人头疼。而SpringBoot就是使用默认的配置来简化开发过程。&#160; &#160; &#160; &#160;随着动态语言的发展，传统的Java开发显得格外的笨重，效率低，配置文件多且杂，部署流程复杂，集成第三方难度大，所以 出现了SpringBoot。&#160; &#160; &#160; &#160;之前看过一句话,什么是SpringBoot？SpringBoot是一个专注于框架的框架。说白了SpringBoot就是简化开发， 提高效率的这么一个东西。 SpringBoot应用可以打包成jar 以jar包 形式运行 SpringBoot内职tomcat、jetty等，我们可 以像运行java application那样运行一个java web项目 SpringBoot提供 starter来简化Maven配置，我们只需要导入几个starter就可以省去好多 maven的配置 SpringBoot无代码生成和XML配置，使用“习惯优于配置“” 的想法来开发项目，在使用它的时候一般使用一些 注解，就可以完成，不需要写代码 SpringBoot对第三方的支持，支持各种第三方，只要导入依赖就能快速的使用，例如Mybatis等 &#160; &#160; &#160; &#160;说了这么多，还不如动手来试试 接下来我们来创建一个SpringBoot应用。 网上有很多大佬写了SpringBoot系列博客，该博文主要作为自己的技术总结，也希望对正在学习的朋友们有些许帮助。]]></content>
-      <categories>
-        <category>SpringBoot</category>
-      </categories>
-      <tags>
-        <tag>SpringBoot</tag>
-      </tags>
+    <content type="text"><![CDATA[title: SpringBoot概述tags: SpringBootcategories: SpringBootcomments: false SpringBoot概述什么是SpringBoot&#160; &#160; &#160; &#160;我们知道Spring使用一个轻量级的企业开发一站式解决方案，提供了最主要的IOC、AOP等相关支持，但是在开发过程中会发现，项目中多而繁杂的配置文件总是让人头疼。而SpringBoot就是使用默认的配置来简化开发过程。&#160; &#160; &#160; &#160;随着动态语言的发展，传统的Java开发显得格外的笨重，效率低，配置文件多且杂，部署流程复杂，集成第三方难度大，所以 出现了SpringBoot。&#160; &#160; &#160; &#160;之前看过一句话,什么是SpringBoot？SpringBoot是一个专注于框架的框架。说白了SpringBoot就是简化开发， 提高效率的这么一个东西。 SpringBoot应用可以打包成jar 以jar包 形式运行 SpringBoot内职tomcat、jetty等，我们可 以像运行java application那样运行一个java web项目 SpringBoot提供 starter来简化Maven配置，我们只需要导入几个starter就可以省去好多 maven的配置 SpringBoot无代码生成和XML配置，使用“习惯优于配置“” 的想法来开发项目，在使用它的时候一般使用一些 注解，就可以完成，不需要写代码 SpringBoot对第三方的支持，支持各种第三方，只要导入依赖就能快速的使用，例如Mybatis等 &#160; &#160; &#160; &#160;说了这么多，还不如动手来试试 接下来我们来创建一个SpringBoot应用。 网上有很多大佬写了SpringBoot系列博客，该博文主要作为自己的技术总结，也希望对正在学习的朋友们有些许帮助。]]></content>
   </entry>
   <entry>
     <title><![CDATA[第二篇博客]]></title>
