@@ -21,19 +21,19 @@
   
   
   
-  <meta name="description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
+  <meta name="description" content="配置文件介绍&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(三)SpringBoot配置和多环境">
 <meta property="og:url" content="http://yoursite.com/2019/01/28/(三)SpringBoot配置和多环境md/index.html">
 <meta property="og:site_name" content="xadjccl">
-<meta property="og:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
+<meta property="og:description" content="配置文件介绍&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-28T08:37:04.784Z">
+<meta property="og:updated_time" content="2019-01-28T08:57:19.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(三)SpringBoot配置和多环境">
-<meta name="twitter:description" content="&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
+<meta name="twitter:description" content="配置文件介绍&amp;#160; &amp;#160; &amp;#160; &amp;#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。">
 <meta name="twitter:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
   
     <link rel="alternate" href="/atom.xml" title="xadjccl" type="application/atom+xml">
@@ -206,8 +206,8 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&#160; &#160; &#160; &#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。<a id="more"></a><br>&#160; &#160; &#160; &#160;application.properties配置文件中 配置整个springboot所需的配置，例如端口，项目名称，redis信息，到后续开发springcloud时的注册中心等等的配置信息，当然也可以自己自定义的配置项。</p>
-<p>&#160; &#160; &#160; &#160;我们打开application.properties，添加配置项：  </p>
+        <h2 id="配置文件介绍"><a href="#配置文件介绍" class="headerlink" title="配置文件介绍"></a>配置文件介绍</h2><p>&#160; &#160; &#160; &#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。<a id="more"></a><br>&#160; &#160; &#160; &#160;application.properties配置文件中 配置整个springboot所需的配置，例如端口，项目名称，redis信息，到后续开发springcloud时的注册中心等等的配置信息，当然也可以自己自定义的配置项。</p>
+<h3 id="新增配置项"><a href="#新增配置项" class="headerlink" title="新增配置项"></a>新增配置项</h3><p>&#160; &#160; &#160; &#160;我们打开application.properties，添加配置项：  </p>
 <pre><code>server.port=8083  
 name=this is default  
 </code></pre><p>&#160; &#160; &#160; &#160;然后改写之前的HelloSpringBootController类  </p>
@@ -223,31 +223,46 @@ public class HelloSpringBootController {
     }
 }  
 
-</code></pre><p> 接着启动项目可以看见：<br><img src="../../../../resource/image/springboot/3/1.png" alt=""> </p>
+</code></pre><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p> 接着启动项目可以看见：<br><img src="../../../../resource/image/springboot/3/1.png" alt=""> </p>
 <p>启动了8083 端口</p>
 <p>我们访问一下<a href="http://127.0.0.1:8083/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8083/sayHello，效果如下：</a><br><img src="../../../../resource/image/springboot/3/2.png" alt=""> </p>
 <p>访问 成功，配置项正确获取了。</p>
-<p>但是在我们正常的开发中会有多个环境，测试环境，开发环境，生产环境，联调环境等等，每个环境下的配置不尽相同，那就需要我们配置多环境的配置文件：</p>
-<p>首先在main/resources下 创建以下几个环境配置文件<br><img src="../../../../resource/image/springboot/3/4.png" alt=""> </p>
-<p>修改各个配置文件的端口和name值<br><img src="../../../../resource/image/springboot/3/5.png" alt=""> </p>
-<p>在application.properties下设置：</p>
+<h2 id="多环境配置"><a href="#多环境配置" class="headerlink" title="多环境配置"></a>多环境配置</h2><p>但是在我们正常的开发中会有多个环境，测试环境，开发环境，生产环境，联调环境等等，每个环境下的配置不尽相同，那就需要我们配置多环境的配置文件：</p>
+<p>首先在main/resources下 创建以下几个环境配置文件<br><img src="../../../../resource/image/springboot/3/3.png" alt=""> </p>
+<p>修改各个配置文件的端口和name值<br><img src="../../../../resource/image/springboot/3/4.png" alt=""> </p>
+<h3 id="指定环境"><a href="#指定环境" class="headerlink" title="指定环境"></a>指定环境</h3><p>在application.properties下设置：</p>
 <p><code>spring.profiles.active=prod</code><br> 确定当前使用的是哪个环境，这边环境的值与application-prod.properties中-后面的值对应，这是SpringBoot约定好的，</p>
-<p>启动项目：<br><img src="../../../../resource/image/springboot/3/6.png" alt=""> </p>
+<p>启动项目：<br><img src="../../../../resource/image/springboot/3/5.png" alt=""> </p>
 <p>会发现启动了application-prod,properties配置下的8082端口，因为我们设置了当前的环境是prod，所以application-prod,properties生效了。</p>
-<p>在浏览器中输入<a href="http://127.0.0.1:8082/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8082/sayHello，效果如下：</a><br><img src="../../../../resource/image/springboot/3/7.png" alt=""> </p>
+<p>在浏览器中输入<a href="http://127.0.0.1:8082/sayHello，效果如下：" target="_blank" rel="noopener">http://127.0.0.1:8082/sayHello，效果如下：</a><br><img src="../../../../resource/image/springboot/3/6.png" alt=""> </p>
 <p>获取到 了正确的端口和值，可以依次测试各个环境。</p>
 <p>基本的多环境配置如上述。</p>
-<p>但是在工作项目中我们将一个项目打包之后发布，springboot 项目使用java -jar xxx.jar 来启动项目。那么我们现在打包之后部署在开发环境中，配置文件中应该这样配置</p>
+<h3 id="配置文件加载顺序"><a href="#配置文件加载顺序" class="headerlink" title="配置文件加载顺序"></a>配置文件加载顺序</h3><ul>
+<li>在命令行中传入的参数。  </li>
+<li>SPRING APPLICATION JSON 中 的属性. SPRING APPLICATION JSON 是 以JSON格式配置在系统环境变量中的内容。</li>
+<li>3.javacomp/env中的JNDI属性。</li>
+<li>4.Java的系统属性，可以通过system.getpropertieso获得的内容。</li>
+<li>5.操作系统的环境变量。</li>
+<li>6.通过random.*配置的随机属性。</li>
+<li>7.位于当前应用怬包之外，针对不同(profile}环境的配置文件内容，例如application-{profile}·properties或是YAML定义的配置文件。</li>
+<li>8.位于当前应用jar包之内，针对不同{profile}环境的配置文件内容，例如application-{profile}.properties或是YAML定义的配置文件。</li>
+<li>9.位于当前应用jar包之外的application.properties和YAML配置内容。</li>
+<li>10.位于当前应用jar包之内的application.properties和YAML配置内容。</li>
+<li>11.在@Configuration注解修改的类中，通过@propertysource注解定义的属性。</li>
+<li>12.应用默认属性，使用SpringApplication.set<br>Defaultproperties定义的内容。优先级按上面的顺序由高到低，数字越小优先级越高。</li>
+</ul>
+<h2 id="项目打包发布"><a href="#项目打包发布" class="headerlink" title="项目打包发布"></a>项目打包发布</h2><p>但是在工作项目中我们将一个项目打包之后发布，springboot 项目使用java -jar xxx.jar 来启动项目。那么我们现在打包之后部署在开发环境中，配置文件中应该这样配置</p>
 <p><code>spring.profiles.active=dev</code><br>那么如果我们要将项目部署到测试环境中，是不是需要修改一下配置文件，然后重新打包部署呢？显然不是的，当然有更好的办法来解决。</p>
 <p>首先我们将 项目打包，当然我们一般会有一些自动打包的脚本，但是这边我就 直接使用cmd打包</p>
-<p>打开cmd进入当前项目的目录<br><img src="../../../../resource/image/springboot/3/8.png" alt=""> </p>
+<p>打开cmd进入当前项目的目录<br><img src="../../../../resource/image/springboot/3/7.png" alt=""> </p>
 <p>运行mvn install （首先确认你已经安装了maven并且配置好环境变量，mvn是可以运行的）</p>
-<p> <img src="../../../../resource/image/springboot/3/9.png" alt=""> </p>
+<p> <img src="../../../../resource/image/springboot/3/8.png" alt=""> </p>
 <p>运行成功之后进入target目录会看见，项目已经打包成jar了</p>
-<p><img src="../../../../resource/image/springboot/3/10.png" alt=""> </p>
+<p><img src="../../../../resource/image/springboot/3/9.png" alt=""> </p>
 <p>cmd 继续进入target目录 （jar所在的目录）</p>
 <p>运行：</p>
 <p><code>java -jar PropertiesSpringBoot-0.0.1-SNAPSHOT.jar --spring.profiles.active=test</code><br>运行jar包，并使用–配置项=值，来设置配置项</p>
+<p><img src="../../../../resource/image/springboot/3/10.png" alt=""> </p>
 <p>可以看见启动了测试环境8083<br><img src="../../../../resource/image/springboot/3/11.png" alt=""> </p>
 <p>访问正确！ </p>
 
@@ -288,7 +303,7 @@ public class HelloSpringBootController {
     <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav">无</ol>
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件介绍"><span class="nav-number">1.</span> <span class="nav-text">配置文件介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新增配置项"><span class="nav-number">1.1.</span> <span class="nav-text">新增配置项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行"><span class="nav-number">1.2.</span> <span class="nav-text">运行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多环境配置"><span class="nav-number">2.</span> <span class="nav-text">多环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指定环境"><span class="nav-number">2.1.</span> <span class="nav-text">指定环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件加载顺序"><span class="nav-number">2.2.</span> <span class="nav-text">配置文件加载顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目打包发布"><span class="nav-number">3.</span> <span class="nav-text">项目打包发布</span></a></li></ol>
     
     </div>
   </aside>
