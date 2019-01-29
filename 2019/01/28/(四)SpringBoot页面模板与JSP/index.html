@@ -13,26 +13,28 @@
   <!-- PACE Progress Bar START -->
 
   
-  <title>xadjccl</title>
+  <title>(四)springboot页面模板与jsp | xadjccl</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="SpringBoot">
   
   
   
-  <meta name="description" content="title: (四)SpringBoot页面模板也JSPtags:  SpringBootcategories: SpringBootcomments: falsephotos:  “../../../../resource/image/SpringBootLogo.jpg”     #概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thym">
+  
+  <meta name="description" content="#概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。 #Thymeleaf 了解thymeleaf之前我们要知道，SpringBoot默认的几个静态页面的目录： /static、/public">
+<meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xadjccl">
+<meta property="og:title" content="(四)SpringBoot页面模板与JSP">
 <meta property="og:url" content="http://yoursite.com/2019/01/28/(四)SpringBoot页面模板与JSP/index.html">
 <meta property="og:site_name" content="xadjccl">
-<meta property="og:description" content="title: (四)SpringBoot页面模板也JSPtags:  SpringBootcategories: SpringBootcomments: falsephotos:  “../../../../resource/image/SpringBootLogo.jpg”     #概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thym">
+<meta property="og:description" content="#概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。 #Thymeleaf 了解thymeleaf之前我们要知道，SpringBoot默认的几个静态页面的目录： /static、/public">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/resource/image/springboot/4/1.png">
-<meta property="og:image" content="http://yoursite.com/resource/image/springboot/4/2.png">
-<meta property="og:updated_time" content="2019-01-29T06:06:30.453Z">
+<meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
+<meta property="og:updated_time" content="2019-01-29T06:13:44.674Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xadjccl">
-<meta name="twitter:description" content="title: (四)SpringBoot页面模板也JSPtags:  SpringBootcategories: SpringBootcomments: falsephotos:  “../../../../resource/image/SpringBootLogo.jpg”     #概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thym">
-<meta name="twitter:image" content="http://yoursite.com/resource/image/springboot/4/1.png">
+<meta name="twitter:title" content="(四)SpringBoot页面模板与JSP">
+<meta name="twitter:description" content="#概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。 #Thymeleaf 了解thymeleaf之前我们要知道，SpringBoot默认的几个静态页面的目录： /static、/public">
+<meta name="twitter:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
   
     <link rel="alternate" href="/atom.xml" title="xadjccl" type="application/atom+xml">
   
@@ -169,6 +171,26 @@ var themeMenus = {};
           <section id="main" style="float:none;"><article id="post-(四)SpringBoot页面模板与JSP" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img fancybox" href="/../../../../resource/image/SpringBootLogo.jpg" rel="gallery_cjrhd0qql0003709lfwzeedsp">
+        <img src="/../../../../resource/image/SpringBootLogo.jpg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      (四)SpringBoot页面模板与JSP
+    </h1>
+  
+
+      </header>
     
     <div class="article-meta">
       
@@ -184,16 +206,7 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: (四)SpringBoot页面模板也JSP<br>tags:</p>
-<ul>
-<li>SpringBoot<br>categories: SpringBoot<br>comments: false<br>photos: <ul>
-<li>“../../../../resource/image/SpringBootLogo.jpg”</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>#概述<br>虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。</p>
+        <p>#概述<br>虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。</p>
 <p>#Thymeleaf<br> 了解thymeleaf之前我们要知道，SpringBoot默认的几个静态页面的目录：</p>
 <p>/static、/public、/resources 、/META-INF/resources</p>
 <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>我们可以将项目中使用到的静态文件放在这几个项目中</p>
@@ -264,33 +277,15 @@ spring.view.prefix=/WEB-INF/jsp/
     </div>
     <footer class="entry-meta entry-footer">
       
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/SpringBoot/">SpringBoot</a>
+
       
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+
       
             
-      
-        
-	<div id="comment">
-		<!-- 来必力City版安装代码 -->
-		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
-		<script type="text/javascript">
-		   (function(d, s) {
-		       var j, e = d.getElementsByTagName(s)[0];
-
-		       if (typeof LivereTower === 'function') { return; }
-
-		       j = d.createElement(s);
-		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-		       j.async = true;
-
-		       e.parentNode.insertBefore(j, e);
-		   })(document, 'script');
-		</script>
-		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-		</div>
-		<!-- City版安装代码已完成 -->
-	</div>
-
-
       
     </footer>
   </div>
