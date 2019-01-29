@@ -3,7 +3,7 @@
   <entry>
     <title></title>
     <url>%2F2019%2F01%2F29%2F(%E4%BA%94)SpringBoot%E7%83%AD%E9%83%A8%E7%BD%B2%2F</url>
-    <content type="text"><![CDATA[title: (五)SpringBoot热部署tags: SpringBootcategories: SpringBootcomments: falsephotos: “../../../../resource/image/SpringBootLogo.jpg” &#160; &#160; &#160; &#160;在前面的开发中不知道各位有没有发现，我们前端页面做修改只要保存， 不需要重启项目，重新访问就可以看见效果，但是在后端，例如controller中我们要改一个很小的值都要重新项目才能生效，这就显得特别的麻烦，所以，热部署可以让我们实现 类似前端页面保存就可以生效的效果，只需要加一个热部署的依赖即可。 以之前的jsp demo为 例，在pom文件中添加依赖 &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt; &lt;/dependency&gt; 重启项目，修改 controller 修改之后保存，直接访问 http://127.0.0.1:8080/testjsp，就可以发现，后台传过来的值已经变化了 页面模板 热部署，我就从书上截图下来]]></content>
+    <content type="text"><![CDATA[title: (五)SpringBoot热部署tags: SpringBootcategories: SpringBootcomments: falsephotos: “../../../../resource/image/SpringBootLogo.jpg” &#160; &#160; &#160; &#160;在前面的开发中不知道各位有没有发现，我们前端页面做修改只要保存， 不需要重启项目，重新访问就可以看见效果，但是在后端，例如controller中我们要改一个很小的值都要重新项目才能生效，这就显得特别的麻烦，所以，热部署可以让我们实现 类似前端页面保存就可以生效的效果，只需要加一个热部署的依赖即可。以之前的jsp demo为 例，在pom文件中添加依赖 &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt; &lt;/dependency&gt; 重启项目，修改 controller 修改之后保存，直接访问 http://127.0.0.1:8080/testjsp，就可以发现，后台传过来的值已经变化了 页面模板 热部署，我就从书上截图下来]]></content>
   </entry>
   <entry>
     <title><![CDATA[(四)SpringBoot页面模板与JSP]]></title>
