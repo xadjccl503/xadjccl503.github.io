@@ -30,7 +30,7 @@
 <meta property="og:description" content="概述&amp;#160; &amp;#160; &amp;#160; &amp;#160;该篇主要记录SpringBoot项目中如何使用 过滤器、监听器、拦截器。关于 过滤器、监听器和拦截器有过web开发经验的 同志们都知道，在web.xml中做相对应的配置，指定实现类即可。过滤器只能再web项目中使用，拦截器则都可以。过滤器和拦截器主要可以实现请求过滤，例如我们web项目判断一个请求之前要先拦截判断，是都有权限来访问，请求中是">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-29T06:59:10.908Z">
+<meta property="og:updated_time" content="2019-01-29T07:02:11.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(六)SpringBoot过滤器、监听器和拦截器">
 <meta name="twitter:description" content="概述&amp;#160; &amp;#160; &amp;#160; &amp;#160;该篇主要记录SpringBoot项目中如何使用 过滤器、监听器、拦截器。关于 过滤器、监听器和拦截器有过web开发经验的 同志们都知道，在web.xml中做相对应的配置，指定实现类即可。过滤器只能再web项目中使用，拦截器则都可以。过滤器和拦截器主要可以实现请求过滤，例如我们web项目判断一个请求之前要先拦截判断，是都有权限来访问，请求中是">
@@ -372,26 +372,41 @@ public class ListenerConterller {
 <p>得到我们想要的效果，  当然HttpSessionListener除了创建和销毁方法还有一些其他的方法可以实现。</p>
 <p>上面使用java配置文件注册的方式注册监听器，当然还有更简单的，直接使用注解</p>
 <h2 id="使用WebListener"><a href="#使用WebListener" class="headerlink" title="使用WebListener"></a>使用WebListener</h2><p>1.在CountListener类上添加@WebListener注解，标记为监听器 </p>
-<p>@WebListener<br>public class CountListener implements HttpSessionListener  {<br>    private int count = 0;<br>    @Override<br>    public void sessionCreated(HttpSessionEvent se) {<br>        // TODO Auto-generated method stub<br>        count++;<br>        se.getSession().getServletContext().setAttribute(“count”, count);<br>        System.out.println(“新增在线人数，当前在线人数：”+count);</p>
-<pre><code>}
+<pre><code>@WebListener
+public class CountListener implements HttpSessionListener  {
+    private int count = 0;
+    @Override
+    public void sessionCreated(HttpSessionEvent se) {
+        // TODO Auto-generated method stub
+        count++;
+        se.getSession().getServletContext().setAttribute(&quot;count&quot;, count);
+        System.out.println(&quot;新增在线人数，当前在线人数：&quot;+count);
 
-@Override
-public void sessionDestroyed(HttpSessionEvent se) {
-    // TODO Auto-generated method stub
-    count--;
-    se.getSession().getServletContext().setAttribute(&quot;count&quot;, count);
-    System.out.println(&quot;删减在线人数，当前在线人数：&quot;+count);
-}
-</code></pre><p>}<br> 2.在项目的启动类上添加注解@ServletComponentScan扫描</p>
-<pre><code>@SpringBootApplication
-@ServletComponentScan
-
-public class ListenerSpringBootApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(ListenerSpringBootApplication.class, args);
     }
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        // TODO Auto-generated method stub
+        count--;
+        se.getSession().getServletContext().setAttribute(&quot;count&quot;, count);
+        System.out.println(&quot;删减在线人数，当前在线人数：&quot;+count);
+    }
+
+
+
+
 }
+ 2.在项目的启动类上添加注解@ServletComponentScan扫描
+
+    @SpringBootApplication
+    @ServletComponentScan
+
+    public class ListenerSpringBootApplication {
+
+        public static void main(String[] args) {
+            SpringApplication.run(ListenerSpringBootApplication.class, args);
+        }
+    }
 </code></pre><p>一样启动项目，用两个浏览器访问 <a href="http://127.0.0.1:8080/testListenerLogin" target="_blank" rel="noopener">http://127.0.0.1:8080/testListenerLogin</a>  可以看见和之前是一样的效果</p>
 <p><img src="../../../../resource/image/springboot/6/7.png" alt=""> </p>
 <h1 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h1><p> 拦截器和过滤器的功能类似，但是是不同的东西</p>
