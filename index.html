@@ -161,6 +161,58 @@ var themeMenus = {};
         
           <section id="main">
   
+    <article id="post-(五)SpringBoot热部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/01/29/(五)SpringBoot热部署/" class="article-date">
+	  <time datetime="2019-01-29T06:28:43.173Z" itemprop="datePublished">一月 29, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: (五)SpringBoot热部署<br>tags:</p>
+<ul>
+<li>SpringBoot<br>categories: SpringBoot<br>comments: false<br>photos: <ul>
+<li>“../../../../resource/image/SpringBootLogo.jpg”</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>&#160; &#160; &#160; &#160;在前面的开发中不知道各位有没有发现，我们前端页面做修改只要保存， 不需要重启项目，重新访问就可以看见效果，但是在后端，例如controller中我们要改一个很小的值都要重新项目才能生效，这就显得特别的麻烦，所以，热部署可以让我们实现 类似前端页面保存就可以生效的效果，只需要加一个热部署的依赖即可。</p>
+<p>以之前的jsp demo为 例，在pom文件中添加依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><p>重启项目，修改 controller</p>
+<p><img src="../../../../resource/image/springboot/5/3.png" alt=""> </p>
+<p>修改之后保存，直接访问 <a href="http://127.0.0.1:8080/testjsp，就可以发现，后台传过来的值已经变化了" target="_blank" rel="noopener">http://127.0.0.1:8080/testjsp，就可以发现，后台传过来的值已经变化了</a><br><img src="../../../../resource/image/springboot/5/1.png" alt=""> </p>
+<p> 页面模板 热部署，我就从书上截图下来<br><img src="../../../../resource/image/springboot/5/2.png" alt=""> </p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
     <article id="post-(四)SpringBoot页面模板与JSP" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -524,6 +576,18 @@ Thymeleaf 了解thymeleaf之前我们要知道，SpringBoot默认的几个静态
           <li class="clearfix">
 
             
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/01/29/(五)SpringBoot热部署/">(no title)</a></h6>
+              <span>一月 29, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
               <div class="widget-entry-thumbnail">
                 <a href="/2019/01/28/(四)SpringBoot页面模板与JSP/" title=""><img width="50" height="50" src="../../../../resource/image/SpringBootLogo.jpg" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
               </div>
@@ -620,7 +684,7 @@ Thymeleaf 了解thymeleaf之前我们要知道，SpringBoot默认的几个静态
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
