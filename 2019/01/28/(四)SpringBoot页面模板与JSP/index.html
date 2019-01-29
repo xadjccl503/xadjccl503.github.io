@@ -21,19 +21,19 @@
   
   
   
-  <meta name="description" content="#概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。">
+  <meta name="description" content="概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(四)SpringBoot页面模板与JSP">
 <meta property="og:url" content="http://yoursite.com/2019/01/28/(四)SpringBoot页面模板与JSP/index.html">
 <meta property="og:site_name" content="xadjccl">
-<meta property="og:description" content="#概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。">
+<meta property="og:description" content="概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-29T06:14:04.678Z">
+<meta property="og:updated_time" content="2019-01-29T06:21:48.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(四)SpringBoot页面模板与JSP">
-<meta name="twitter:description" content="#概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。">
+<meta name="twitter:description" content="概述虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。">
 <meta name="twitter:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
   
     <link rel="alternate" href="/atom.xml" title="xadjccl" type="application/atom+xml">
@@ -168,7 +168,7 @@ var themeMenus = {};
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-(四)SpringBoot页面模板与JSP" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-(四)SpringBoot页面模板与JSP" style="width: 66%; float:left;" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
 <div class="article-gallery">
@@ -206,13 +206,20 @@ var themeMenus = {};
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#概述<br>虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。<a id="more"></a> </p>
-<p>#Thymeleaf<br> 了解thymeleaf之前我们要知道，SpringBoot默认的几个静态页面的目录：</p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。<a id="more"></a> </p>
+<h1 id="Thymeleaf"><a href="#Thymeleaf" class="headerlink" title="Thymeleaf"></a>Thymeleaf</h1><p> 了解thymeleaf之前我们要知道，SpringBoot默认的几个静态页面的目录：</p>
 <p>/static、/public、/resources 、/META-INF/resources</p>
 <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>我们可以将项目中使用到的静态文件放在这几个项目中</p>
 <p>首先我们创建一个SpringBoot项目</p>
-<p>1.加入thymeleaf依赖<br>···<br>    <dependency><br>        <groupid>org.springframework.boot</groupid><br>        <artifactid>spring-boot-starter-thymeleaf</artifactid><br>    </dependency><br>···<br> 2.编写controller<br>···<br>    @Controller</p>
-<pre><code>public class ThymeleafController {
+<p>1.加入thymeleaf依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+&lt;/dependency&gt;  
+</code></pre><p> 2.编写controller</p>
+<pre><code>@Controller
+
+public class ThymeleafController {
     @RequestMapping(value = &quot;/testthymeleaf&quot;)
     public ModelAndView test(ModelAndView mv) {
         mv.setViewName(&quot;thymeleaf1&quot;);
@@ -220,12 +227,30 @@ var themeMenus = {};
         return mv;
     }
 }  
-</code></pre><p>···<br>3.在src/main/resources/templates目录下创建 thymeleaf.html<br>···<br>    &lt;!DOCTYPE html&gt;<br>    <html><br>    <head lang="en"><meta name="generator" content="Hexo 3.8.0"><br>        <meta charset="UTF-8"><br>        <title>thymeleaf demo</title><br>    </head><br>    <body><br>    <h1>Hello thymeleaf</h1></body></html></p>
-<pre><code>&lt;h2 th:text=&quot;&apos;名称：&apos;+${name}&quot;&gt;默认值&lt;/h2&gt;
+</code></pre><p>3.在src/main/resources/templates目录下创建 thymeleaf.html</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;thymeleaf demo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello thymeleaf&lt;/h1&gt;
+
+&lt;h2 th:text=&quot;&apos;名称：&apos;+${name}&quot;&gt;默认值&lt;/h2&gt;
 &lt;/body&gt;
 &lt;/html&gt;  
-</code></pre><p>···<br> 4.配置thymel信息，在application.properties下配置<br>··· </p>
-<p> #thymelea模板配置<br>spring.thymeleaf.prefix=classpath:/templates/<br>spring.thymeleaf.suffix=.html<br>spring.thymeleaf.mode=HTML5<br>spring.thymeleaf.encoding=UTF-8<br>spring.thymeleaf.content-type=text/html<br>spring.thymeleaf.cache=false<br>spring.resources.chain.strategy.content.enabled=true<br>spring.resources.chain.strategy.content.paths=/**<br>···<br> 5.启动项目，浏览器访问<a href="http://127.0.0.1:8080/testthymeleaf" target="_blank" rel="noopener">http://127.0.0.1:8080/testthymeleaf</a><br><img src="../../../../resource/image/springboot/4/1.png" alt=""> </p>
+</code></pre><p> 4.配置thymel信息，在application.properties下配置</p>
+<pre><code>#thymelea模板配置
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
+spring.thymeleaf.mode=HTML5
+spring.thymeleaf.encoding=UTF-8
+spring.thymeleaf.content-type=text/html
+spring.thymeleaf.cache=false
+spring.resources.chain.strategy.content.enabled=true
+spring.resources.chain.strategy.content.paths=/**  
+</code></pre><p> 5.启动项目，浏览器访问<a href="http://127.0.0.1:8080/testthymeleaf" target="_blank" rel="noopener">http://127.0.0.1:8080/testthymeleaf</a><br><img src="../../../../resource/image/springboot/4/1.png" alt=""> </p>
 <p>至此，Thymeleaf整合成功，当然thymeleaf还有很多内容，但是我个人也没用过，只是稍微了解 。</p>
 <p>如果按照上面的做法 之后访问报404 的话 检查一下SpringBoot的版本，设置为1.3.3就可以解决了。</p>
 <p>JSP<br>对于一些老项目基本都是使用jsp，所以SpringBoot也有提供对jsp的支持</p>
@@ -262,11 +287,11 @@ pageEncoding=&quot;UTF-8&quot;%&gt;
 &lt;/body&gt;
 &lt;/html&gt;  
 </code></pre><p>4.配置jsp，在application.properties里配置：</p>
-<pre><code>//jsp 支持
+<pre><code>#jsp 支持
 spring.mvc.view.suffix=.jsp
 spring.mvc.view.prefix=/WEB-INF/jsp/  
 </code></pre><p>如果SpringBoot的版本太低的话配置为：</p>
-<pre><code>//jsp 支持
+<pre><code>#jsp 支持
 
 spring.view.suffix=.jsp
 spring.view.prefix=/WEB-INF/jsp/  
@@ -310,7 +335,7 @@ spring.view.prefix=/WEB-INF/jsp/
     <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
     <strong class="toc-title">文章目录</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建项目"><span class="nav-number">1.</span> <span class="nav-text">创建项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">Hello thymeleaf</span></a>
+      <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Thymeleaf"><span class="nav-number">2.</span> <span class="nav-text">Thymeleaf</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建项目"><span class="nav-number">2.1.</span> <span class="nav-text">创建项目</span></a></li></ol></li></ol>
     
     </div>
   </aside>
