@@ -30,7 +30,7 @@
 <meta property="og:description" content="概述&amp;#160; &amp;#160; &amp;#160; &amp;#160;该篇主要记录SpringBoot项目中如何使用 过滤器、监听器、拦截器。关于 过滤器、监听器和拦截器有过web开发经验的 同志们都知道，在web.xml中做相对应的配置，指定实现类即可。过滤器只能再web项目中使用，拦截器则都可以。过滤器和拦截器主要可以实现请求过滤，例如我们web项目判断一个请求之前要先拦截判断，是都有权限来访问，请求中是">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/resource/image/SpringBootLogo.jpg">
-<meta property="og:updated_time" content="2019-01-29T06:55:50.356Z">
+<meta property="og:updated_time" content="2019-01-29T06:59:10.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(六)SpringBoot过滤器、监听器和拦截器">
 <meta name="twitter:description" content="概述&amp;#160; &amp;#160; &amp;#160; &amp;#160;该篇主要记录SpringBoot项目中如何使用 过滤器、监听器、拦截器。关于 过滤器、监听器和拦截器有过web开发经验的 同志们都知道，在web.xml中做相对应的配置，指定实现类即可。过滤器只能再web项目中使用，拦截器则都可以。过滤器和拦截器主要可以实现请求过滤，例如我们web项目判断一个请求之前要先拦截判断，是都有权限来访问，请求中是">
@@ -261,7 +261,7 @@ public class FilterController {
 <p>控制台输出正确。</p>
 <h2 id="指定过滤器顺序"><a href="#指定过滤器顺序" class="headerlink" title="指定过滤器顺序"></a>指定过滤器顺序</h2><p>&#160; &#160; &#160; &#160;至此，一个过滤器就可以使用了，但是在我们平常的工作中一般有多个过滤器，并且要指定每个过滤器的顺序等等，那么用这种方式是没有办法 实现的，可以使用FilterRegistrationBean 来实现 </p>
 <p>1.将上面项目的 过滤器上的@WebFilter(filterName = “myFilter”,urlPatterns = {“/*”}) 去掉，将入口类的@ServletComponentScan去掉。</p>
-<p>2.根据之前 的做饭做法再编写一个过滤器： MyFilterTwo</p>
+<p>2.根据之前的做法再编写一个过滤器： MyFilterTwo</p>
 <pre><code>public class MyFilterTwo implements Filter {
 
     @Override
