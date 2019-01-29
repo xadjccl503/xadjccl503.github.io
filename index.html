@@ -161,7 +161,115 @@ var themeMenus = {};
         
           <section id="main">
   
-    <article id="post-(三)SpringBoot配置和多环境md" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-(四)SpringBoot页面模板与JSP"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/01/28/(四)SpringBoot页面模板与JSP/" class="article-date">
+	  <time datetime="2019-01-28T09:54:33.444Z" itemprop="datePublished">一月 28, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: (四)SpringBoot页面模板也JSP<br>tags:</p>
+<ul>
+<li>SpringBoot<br>categories: SpringBoot<br>comments: false<br>photos: <ul>
+<li>“../../../../resource/image/SpringBootLogo.jpg”</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>#概述<br>虽然在我们现在工作中，后端 人员一般只写接口，前后端分离，一般也使用不到页面模板，但是官方推荐使用thymeleaf，这边就蛮记录一下，对于jsp做过web开发的同志应该都会清楚，一些老项目基本是使用jsp，虽然官方已经不建议使用了，但是还是要了解一下。</p>
+<p>#Thymeleaf<br> 了解thymeleaf之前我们要知道，SpringBoot默认的几个静态页面的目录：</p>
+<p>/static、/public、/resources 、/META-INF/resources</p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>我们可以将项目中使用到的静态文件放在这几个项目中</p>
+<p>首先我们创建一个SpringBoot项目</p>
+<p>1.加入thymeleaf依赖<br>···<br>    <dependency><br>        <groupid>org.springframework.boot</groupid><br>        <artifactid>spring-boot-starter-thymeleaf</artifactid><br>    </dependency><br>···<br> 2.编写controller<br>···<br>    @Controller</p>
+<pre><code>public class ThymeleafController {
+    @RequestMapping(value = &quot;/testthymeleaf&quot;)
+    public ModelAndView test(ModelAndView mv) {
+        mv.setViewName(&quot;thymeleaf1&quot;);
+        mv.addObject(&quot;name&quot;,&quot;欢迎使用Thymeleaf!&quot;);
+        return mv;
+    }
+}  
+</code></pre><p>···<br>3.在src/main/resources/templates目录下创建 thymeleaf.html<br>···<br>    &lt;!DOCTYPE html&gt;<br>    <html><br>    <head lang="en"><meta name="generator" content="Hexo 3.8.0"><br>        <meta charset="UTF-8"><br>        <title>thymeleaf demo</title><br>    </head><br>    <body><br>    <h1>Hello thymeleaf</h1></body></html></p>
+<pre><code>&lt;h2 th:text=&quot;&apos;名称：&apos;+${name}&quot;&gt;默认值&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;  
+</code></pre><p>···<br> 4.配置thymel信息，在application.properties下配置<br>··· </p>
+<p> #thymelea模板配置<br>spring.thymeleaf.prefix=classpath:/templates/<br>spring.thymeleaf.suffix=.html<br>spring.thymeleaf.mode=HTML5<br>spring.thymeleaf.encoding=UTF-8<br>spring.thymeleaf.content-type=text/html<br>spring.thymeleaf.cache=false<br>spring.resources.chain.strategy.content.enabled=true<br>spring.resources.chain.strategy.content.paths=/**<br>···<br> 5.启动项目，浏览器访问<a href="http://127.0.0.1:8080/testthymeleaf" target="_blank" rel="noopener">http://127.0.0.1:8080/testthymeleaf</a><br><img src="../../../../resource/image/springboot/4/1.png" alt=""> </p>
+<p>至此，Thymeleaf整合成功，当然thymeleaf还有很多内容，但是我个人也没用过，只是稍微了解 。</p>
+<p>如果按照上面的做法 之后访问报404 的话 检查一下SpringBoot的版本，设置为1.3.3就可以解决了。</p>
+<p>JSP<br>对于一些老项目基本都是使用jsp，所以SpringBoot也有提供对jsp的支持</p>
+<p>1.添加jsp的依赖</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;
+    &lt;artifactId&gt;tomcat-embed-jasper&lt;/artifactId&gt;
+&lt;/dependency&gt;  
+</code></pre><p>2.编写controller</p>
+<pre><code>@Controller
+public class JspController {
+
+    @GetMapping(&quot;/testjsp&quot;)
+    public ModelAndView index() {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject(&quot;name&quot;, &quot;ccl&quot;);
+        //模版名称，实际的目录为：src/main/webapp/jsp/index.html
+        mv.setViewName(&quot;test&quot;);
+        return mv;
+    }
+}  
+</code></pre><p> 3.在src/main/webapp/WEB-INF/jsp下创建test.jsp  </p>
+<pre><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charsetUTF-8&quot;&gt;
+&lt;title&gt;jsp demo &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello Jsp&lt;/h1&gt;
+&lt;h2 &gt;这是 ${name}  的jsp&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;  
+</code></pre><p>4.配置jsp，在application.properties里配置：</p>
+<pre><code>//jsp 支持
+spring.mvc.view.suffix=.jsp
+spring.mvc.view.prefix=/WEB-INF/jsp/  
+</code></pre><p>如果SpringBoot的版本太低的话配置为：</p>
+<pre><code>//jsp 支持
+
+spring.view.suffix=.jsp
+spring.view.prefix=/WEB-INF/jsp/  
+</code></pre><p>5.启动项目，浏览器访问<a href="http://127.0.0.1:8080/testjsp" target="_blank" rel="noopener">http://127.0.0.1:8080/testjsp</a><br><img src="../../../../resource/image/springboot/4/2.png" alt=""> </p>
+<p>至此。SpringBoot整合jsp成功。 </p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+    <article id="post-(三)SpringBoot配置和多环境" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -169,7 +277,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/01/28/(三)SpringBoot配置和多环境md/">(三)SpringBoot配置和多环境</a>
+      <a class="article-title" href="/2019/01/28/(三)SpringBoot配置和多环境/">(三)SpringBoot配置和多环境</a>
     </h1>
   
 
@@ -177,7 +285,7 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2019/01/28/(三)SpringBoot配置和多环境md/" class="article-date">
+	Posted on <a href="/2019/01/28/(三)SpringBoot配置和多环境/" class="article-date">
 	  <time datetime="2019-01-28T06:46:59.842Z" itemprop="datePublished">一月 28, 2019</time>
 	</a>
 
@@ -187,14 +295,14 @@ var themeMenus = {};
       
         
           <div class="entry-thumbnail">
-            <a href="/2019/01/28/(三)SpringBoot配置和多环境md/"><img width="250" height="175" src="../../../../resource/image/SpringBootLogo.jpg" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
+            <a href="/2019/01/28/(三)SpringBoot配置和多环境/"><img width="250" height="175" src="../../../../resource/image/SpringBootLogo.jpg" class="attachment-thumb-featured size-thumb-featured wp-post-image" alt=""></a>
           </div>
           <div class="entry-summary">
           配置文件介绍&#160; &#160; &#160; &#160;在第一个Springboot项目中我们知道，SpringBoot项目的默认 配置文件在main/resources下的application.properties下，我们接直接用之前的项目了解一下配置文件。&#160; &#160; &#160; &#160;application.properties配置文件中 配置整个sp...
 
         
           <p class="article-more-link">
-            <a href="/2019/01/28/(三)SpringBoot配置和多环境md/#more">阅读全文</a>
+            <a href="/2019/01/28/(三)SpringBoot配置和多环境/#more">阅读全文</a>
           </p>
         </div>
       
@@ -462,13 +570,25 @@ var themeMenus = {};
           <li class="clearfix">
 
             
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/01/28/(四)SpringBoot页面模板与JSP/">(no title)</a></h6>
+              <span>一月 28, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
               <div class="widget-entry-thumbnail">
-                <a href="/2019/01/28/(三)SpringBoot配置和多环境md/" title=""><img width="50" height="50" src="../../../../resource/image/SpringBootLogo.jpg" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
+                <a href="/2019/01/28/(三)SpringBoot配置和多环境/" title=""><img width="50" height="50" src="../../../../resource/image/SpringBootLogo.jpg" class="attachment-thumb-small size-thumb-small wp-post-image" alt="preview-16" title=""></a>
               </div>
               <div class="widget-entry-summary">
             
 
-              <h6 style="margin: 0;"><a href="/2019/01/28/(三)SpringBoot配置和多环境md/">(三)SpringBoot配置和多环境</a></h6>
+              <h6 style="margin: 0;"><a href="/2019/01/28/(三)SpringBoot配置和多环境/">(三)SpringBoot配置和多环境</a></h6>
               <span>一月 28, 2019</span>
             </div>
 
@@ -543,7 +663,7 @@ var themeMenus = {};
     <h3 class="widget-title">归档</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
